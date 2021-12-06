@@ -19,7 +19,7 @@ else:
 token = configData["Token"]
 prefix = configData["Prefix"]
 
-bot = commands.Bot(command_prefix="!")
+bot = commands.Bot(command_prefix=prefix)
 
 @bot.event
 async def on_ready():
