@@ -47,9 +47,9 @@ async def fetchJackpot(guild):
     nickname = "[!] JackBot: %s"%jackpot
 
     tickets = res['numTickets']
-    participants = res['numParticipants']
+    winners = res['numParticipants']
     deadline = res['drawDeadline']
-    activity = 'Tickets: %s, Winners: %s, Draw Date: %s' % (tickets, participants, deadline)
+    activity = 'Tickets: %s, Winners: %s, Draw Date: %s' % (tickets, winners, deadline)
     await guild.me.edit(nick=nickname)
     await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=activity))
     print(jackpot)
