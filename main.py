@@ -40,12 +40,7 @@ async def ping(ctx):
 
 @tasks.loop(minutes=1)
 async def getwinners(ctx, winnersinterval):
-    #date = parser.parse(deadline)
-    #date = date.replace(tzinfo=pytz.UTC)
-   # later = date + datetime.timedelta(seconds=120)
-    #currentDraw = req.get('https://delo-stats.azurewebsites.net/api/lotto-stats?code=yeIblDu0vazoxpQ9Bcv03P35vyjAHh0izlyojw635IS1tkO6aoMCSQ==')
     now = datetime.datetime.utcnow().replace(tzinfo=pytz.UTC)
-    #drawdata = currentDraw.json()
     global drawdate
     global drawid
     id = drawid
@@ -93,7 +88,6 @@ async def postwinners(ctx, res):
     embed.add_field(name='Winners: ', value=numwinners, inline=True) 
     embed.add_field(name='Positions', value=positions, inline=True)    
     embed.add_field(name='USD', value=usdamt, inline=True)
-    #embed.add_field(name='DELO Amount', value=deloamt, inline=True)
     embed.add_field(name='Address', value=address, inline=True)
     print(res)
     await channel.send(embed=embed)
