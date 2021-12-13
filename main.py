@@ -47,7 +47,7 @@ async def getwinners(ctx, winnersinterval):
     global addminute
     date = drawdate + datetime.timedelta(minutes=winnersinterval)
     print(date)
-    if(date.day == now.day and date.minute == (winnersinterval + addminute)):
+    if(date.day == now.day and date.hour == now.hour and date.minute == (winnersinterval + addminute)):
         print('Fetching winners...')
         url = 'https://delo-stats.azurewebsites.net/api/previous-winners?code=WDWAXx2Od/VCGwRz6qnXyNKkX4YJHWN3yWVPD7rWfKaqum6gKYW4RQ=='
         PARAMS = {'id': id}
